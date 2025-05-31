@@ -1,26 +1,25 @@
-name:"my ci pipeline"
+name: "my ci pipeline"
 on:
   push:
     branches:
       - main
       - master
-    pull_request:
-        branches:
-            - main
-            - master
-            
-jobs:
-    on-push:
-        runs-on: ubuntu-latest
-        steps:
-        - name: "on push"
-            run: echo "push successful"
+  pull_request:
+    branches:
+      - main
+      - master
 
 jobs:
-on pull_request:
+  on-push:
     runs-on: ubuntu-latest
     steps:
-    - name: "on pull request"
-      run: echo "pull request successful"                   
+      - name: "on push"
+        run: echo "push successful"
+
+  on-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "on pull request"
+        run: echo "pull request successful"
 
             
